@@ -8,8 +8,16 @@ app.use(express.json());
 app.get("/", (req, res) => res.type('html').send(html));
 
 // POST request handler at /test endpoint
-app.post("/test", (req, res) => {
-  console.log(res.status);
+app.post('test', function(req, res) {
+  const user_id = req.body.id;
+  const token = req.body.token;
+  const geo = req.body.geo;
+
+  res.send({
+    'user_id': user_id,
+    'token': token,
+    'geo': geo
+  });
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
