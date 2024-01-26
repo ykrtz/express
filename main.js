@@ -9,13 +9,7 @@ app.get("/", (req, res) => res.type('html').send(html));
 
 // POST request handler at /test endpoint
 app.post("/test", (req, res) => {
-  const mintAddress = req.body.mintAddress; // Access mintAddress from request body
-  if (!mintAddress) {
-    return res.status(400).send("Mint address is required");
-  }
-
-  console.log("Received mint address:", mintAddress); // Log the mint address to the console
-  res.status(200).send(`POST request received with mint address: ${mintAddress}`);
+  console.log(res.status);
 });
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
