@@ -17,4 +17,3 @@ const client = new MongoClient(mongoUri, { useNewUrlParser: true, useUnifiedTopo
   app.listen(port, () => {
     console.log(`Server running on port ${port}`);
   });
-});
